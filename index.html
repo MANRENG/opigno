@@ -6,6 +6,134 @@
 		<meta name="keywords" content="greendome,gdome,onlineschool,new learners,primary lessons,secondary lessons,tertiary lessons,skill aqcuisition,productivity and profitability">
 <meta name="description" content="greendome,gdome,onlineschool,new learners,primary lessons,secondary lessons,tertiary lessons,skill aqcuisition,productivity and profitability">		
 		<link rel="stylesheet" href="assets/css/main.css" />
+		
+	<style>
+        /* Styling for the pop-up advert */
+        .advert {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(to right, #ffffff 50%, #ffffff 50%);
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            z-index: 999;
+        }
+
+        .advert.show {
+            opacity: 1;
+        }
+
+        .advert h3 {
+            margin: 0 0 10px;
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            font-size: 30px;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .advert .headline-container {
+            background-color: #00ff00;
+            padding: 5px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .advert .headline {
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            font-size: 40px;
+            font-weight: bold;
+            color: #ffffff;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .advert .message-container {
+            background-color: #f2f2f2;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .advert .message {
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            font-size: 18px;
+            color: #333;
+        }
+
+        /* Styling for the exit cross tab */
+        .exit-tab {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 20px;
+            height: 20px;
+            background-color: #1e1e1f;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            z-index: 1;
+        }
+
+        .exit-tab:hover {
+            background-color: #008000;
+        }
+
+        .exit-tab::before,
+        .exit-tab::after {
+            content: "";
+            position: absolute;
+            width: 12px;
+            height: 2px;
+            background-color: #ffffff;
+            transition: background-color 0.3s ease;
+        }
+
+        .exit-tab::before {
+            transform: rotate(45deg);
+        }
+
+        .exit-tab::after {
+            transform: rotate(-45deg);
+        }
+    </style>
+
+    <script>
+        window.addEventListener('load', function() {
+            // Function to display the pop-up advert
+            function displayAdvert() {
+                // Create a pop-up element
+                var advert = document.createElement('div');
+                advert.className = 'advert';
+                advert.innerHTML = '<div class="exit-tab"></div><div class="headline-container"><h3>Unleash Your Writing Potential, Earn Big!</h3></div><div class="message-container"><p>Join Greendome Today!</p><p>Ignite minds, earn while you inspire, and connect globally! Greendome, the ultimate online learning hub, is searching for talented writers. Craft captivating content, get paid, literally with every click as your content gets used. Visit <a href="https://www.greendomeng.org">https://www.greendomeng.org</a> and join the writing revolution now!</p></div>';
+
+                // Add the pop-up element to the body
+                document.body.appendChild(advert);
+
+                // Show the pop-up with a fade-in animation
+                setTimeout(function() {
+                    advert.classList.add('show');
+                }, 100);
+
+                // Close the pop-up when clicked on the exit tab
+                var exitTab = advert.querySelector('.exit-tab');
+                exitTab.addEventListener('click', function() {
+                    advert.style.display = 'none';
+                });
+            }
+
+            // Display the pop-up advert
+            displayAdvert();
+        });
+    </script>
 </head>
 <body class="is-preload">
 <div id="wrapper">
@@ -69,6 +197,13 @@
 									<h3><a href="improve.html">Train yourself or staff</a></h3>
 							    </header>
 								<a href="improve.html" class="image"><img src="images/pic11.jpg" alt="" border="0" /></a>						    </article>
+					    </li>
+						<li>
+							<article>
+								<header>
+									<h3><a href="about.html">About Us</a></h3>
+							    </header>
+								<a href="about.html" class="image"><img src="images/downloadABOUS.png" alt="" border="0" /></a>						    </article>
 					    </li>
 						<li>
 							<article>
